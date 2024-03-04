@@ -3,14 +3,14 @@ import './Header.css';
 import Logo from '../../assets/logo.png';
 import Bars from '../../assets/bars.png';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
+import { NavLink } from 'react-router-dom';
 const Header = () => {
 
     const mobile = window.innerWidth <= 768 ? true : false;
     const [menuOpened, setMenuOpened] = useState(false);
 
     return (
-        <div className="header">
+        <div className="header mt-4">
             <img src={Logo} alt="" className='logo' />
 
             {(menuOpened === false && mobile === true) ? (
@@ -27,39 +27,61 @@ const Header = () => {
                 </div>
             ) :
                 (<ul className='header-menu'>
-                    <li >
+                    <li>
                         <Link
                             onClick={() => setMenuOpened(false)}
                             activeClass='active'
                             to='home'
                             span={true}
                             smoth={true}
-                        >information
+                        >
+                            <NavLink to='/'>
+                            Home
+
+                            </NavLink>
                         </Link>
                     </li>
-                    <li onClick={() => setMenuOpened(false)}>
+                    <li>
                         <Link
                             onClick={() => setMenuOpened(false)}
-                            to='programs'
+                            to='program'
                             span={true}
                             smoth={true}
-                        >Programs</Link>
+                        >
+                            <NavLink to='/program'>
+                            Programs
+
+                            </NavLink>
+                            
+                            </Link>
                     </li>
-                    <li onClick={() => setMenuOpened(false)}>
+                    <li >
                         <Link
                             onClick={() => setMenuOpened(false)}
                             to='reasons'
                             span={true}
                             smoth={true}
-                        >Prices</Link>
+                        >
+                             <NavLink to='/whyus'>
+                            Why Us
+
+                            </NavLink>
+                            
+                            </Link>
                     </li>
-                    <li onClick={() => setMenuOpened(false)}>
+                    <li>
                         <Link
                             onClick={() => setMenuOpened(false)}
                             to='plans'
                             span={true}
                             smoth={true}
-                        >Plans</Link>
+                        >
+                            <NavLink to='/plans'>
+                            Plans
+
+                            </NavLink>
+                        
+                        </Link>
                     </li>
                     <li>
                         <Link
@@ -67,7 +89,14 @@ const Header = () => {
                             to='testimonials'
                             span={true}
                             smoth={true}
-                        >contact us</Link>
+                        > 
+                        
+                        <NavLink to='/testimonials'>
+                            Testimonials
+
+                            </NavLink>
+                        
+                        </Link>
                     </li>
                 </ul>
                 )}
