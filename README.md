@@ -1,5 +1,5 @@
 
-# Fit-Club
+# Fit-Club(EC103A)
 
 A gym website made for the event 'DevWrap:From sketch to solution'
 
